@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Korea 5-Day Itinerary</title>
+  <link rel="stylesheet" href="static/css/app.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">PDF itinerary converted to web</p>
+        <h1>五天韓國行程總覽</h1>
+        <p class="hero-copy">
+          將原始行程整理成可以快速瀏覽的單頁式介面，按天切換後可直接看路線、重點與備忘。
+        </p>
+      </div>
+
+      <div class="hero-panel">
+        <div>
+          <span class="panel-label">行程型態</span>
+          <strong>5 天自由排程</strong>
+        </div>
+        <div>
+          <span class="panel-label">中樞住宿</span>
+          <strong>G3 Hotel</strong>
+        </div>
+        <div>
+          <span class="panel-label">主要移動</span>
+          <strong>地鐵 + 步行</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="card summary-card">
+          <span class="section-label">快速摘要</span>
+          <div class="stat-grid" id="statGrid"></div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <nav class="day-nav card" id="dayNav" aria-label="Day navigation"></nav>
+
+        <article class="card itinerary-card">
+          <div class="itinerary-header">
+            <div>
+              <span class="section-label" id="dayDateLabel"></span>
+              <h2 id="dayTitle"></h2>
+              <p id="daySummary"></p>
+            </div>
+            <div class="day-badge" id="dayBadge"></div>
+          </div>
+
+          <div class="content-divider">
+            <span class="section-label">實際行程與花費統整</span>
+          </div>
+
+          <div class="route-meta" id="routeMeta"></div>
+
+          <section class="cost-card" id="costCard" hidden>
+            <div class="cost-card-header">
+              <div>
+                <span class="section-label">實際花費統整</span>
+                <h3 id="costTitle"></h3>
+              </div>
+              <div class="cost-total" id="costTotal"></div>
+            </div>
+            <div class="cost-grid" id="costGrid"></div>
+            <p class="cost-note" id="costNote"></p>
+          </section>
+
+          <div class="content-divider content-divider-planned">
+            <span class="section-label">初始規劃（PDF）</span>
+          </div>
+
+          <div class="timeline" id="timeline"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>
