@@ -1,6 +1,6 @@
 const itinerary = [
   {
-    day: 'Day 1',
+    day: '9/15',
     date: '9/15',
     badge: '抵達日',
     title: '金浦機場落地到忠武路住宿',
@@ -60,7 +60,7 @@ const itinerary = [
     ]
   },
   {
-    day: 'Day 2',
+    day: '9/16',
     date: '9/16',
     badge: '視力與購物',
     title: '廣藏市場、眼科、Hannam 眼鏡店',
@@ -126,7 +126,7 @@ const itinerary = [
     ]
   },
   {
-    day: 'Day 3',
+    day: '9/17',
     date: '9/17',
     badge: '弘大 / 百貨',
     title: '上水、樂天百貨、明洞往返',
@@ -178,7 +178,7 @@ const itinerary = [
     ]
   },
   {
-    day: 'Day 4',
+    day: '9/18',
     date: '9/18',
     badge: '醫療 / 景福宮',
     title: '眼科、醬蟹、景福宮與甜點',
@@ -239,7 +239,7 @@ const itinerary = [
     ]
   },
   {
-    day: 'Day 5',
+    day: '9/19',
     date: '9/19',
     badge: '返程日',
     title: '首爾站到仁川機場',
@@ -315,14 +315,14 @@ function renderNavigation(selectedIndex) {
   dayNav.innerHTML = itinerary.map((entry, index) => `
     <button class="${index === selectedIndex ? 'active' : ''}" data-index="${index}" type="button" aria-pressed="${index === selectedIndex}">
       <strong>${entry.day}</strong>
-      <small>${entry.date}</small>
+      ${entry.day === entry.date ? '' : `<small>${entry.date}</small>`}
     </button>
   `).join('');
 }
 
 function renderDay(index) {
   const day = itinerary[index];
-  dayDateLabel.textContent = `${day.date} · ${day.day}`;
+  dayDateLabel.textContent = day.day === day.date ? day.day : `${day.date} · ${day.day}`;
   dayTitle.textContent = day.title;
   daySummary.textContent = day.summary;
   dayBadge.textContent = day.badge;
