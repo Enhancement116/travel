@@ -90,6 +90,62 @@
       font-size: 1.4rem;
     }
 
+    .showcase {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cover-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      min-height: 180px;
+      padding: 16px;
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease;
+    }
+
+    .cover-tile:hover {
+      transform: translateY(-2px);
+    }
+
+    .cover-korea {
+      background:
+        linear-gradient(180deg, rgba(11, 19, 30, 0.2), rgba(11, 19, 30, 0.6)),
+        linear-gradient(135deg, #1e5f6a, #2b8fa0 45%, #db8b54);
+    }
+
+    .cover-hk {
+      background:
+        linear-gradient(180deg, rgba(38, 15, 18, 0.2), rgba(38, 15, 18, 0.6)),
+        linear-gradient(135deg, #7d1d29, #c44536 40%, #f0a047);
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-content strong {
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1.1;
+    }
+
+    .cover-content span {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.92rem;
+      opacity: 0.9;
+    }
+
     .meta {
       margin: 0;
       color: var(--muted);
@@ -130,36 +186,8 @@
       transform: translateY(-1px);
     }
 
-    .guide {
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.72);
-      padding: 16px;
-    }
-
-    .guide h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-    }
-
-    .guide ol {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    code {
-      background: rgba(30, 95, 106, 0.1);
-      border: 1px solid rgba(30, 95, 106, 0.24);
-      border-radius: 8px;
-      padding: 1px 6px;
-      color: #12434a;
-      font-size: 0.9em;
-    }
-
     @media (max-width: 860px) {
+      .showcase,
       .grid {
         grid-template-columns: 1fr;
       }
@@ -173,35 +201,41 @@
       <h1>En & Sky Travel Journal</h1>
       <p class="lead">歡迎來到 En & Sky 的旅行紀錄主頁。這裡整理了每次旅程的路線與重點，方便親友或新訪客快速瀏覽與參考。</p>
 
+      <section class="showcase" aria-label="cover showcase">
+        <a class="cover-tile cover-korea" href="Korea/index.html">
+          <div class="cover-content">
+            <strong>2025 Korea</strong>
+            <span>9/15 - 9/19 ・ Seoul Itinerary</span>
+          </div>
+        </a>
+        <a class="cover-tile cover-hk" href="HK/index.html">
+          <div class="cover-content">
+            <strong>2026 HK</strong>
+            <span>3/22 - 3/26 ・ Hong Kong Itinerary</span>
+          </div>
+        </a>
+      </section>
+
       <section class="grid" aria-label="project entries">
         <article class="card">
-          <h2>Korea</h2>
+          <h2>2025 Korea</h2>
           <p class="meta">日期：9/15 - 9/19</p>
           <p class="meta">韓國 5 天行程，包含每日路線、花費統整與地區總覽。</p>
           <div class="actions">
-            <a class="btn btn-main" href="Korea/index.html">查看 Korea 行程</a>
+            <a class="btn btn-main" href="Korea/index.html">查看 2025 Korea 行程</a>
             <a class="btn btn-sub" href="Korea/README_convert.md">行程來源說明</a>
           </div>
         </article>
 
         <article class="card">
-          <h2>HK</h2>
+          <h2>2026 HK</h2>
           <p class="meta">日期：3/22 - 3/26</p>
           <p class="meta">香港 5 天行程頁面，包含每日安排與重點景點內容。</p>
           <div class="actions">
-            <a class="btn btn-main" href="HK/index.html">查看 HK 行程</a>
+            <a class="btn btn-main" href="HK/index.html">查看 2026 HK 行程</a>
             <a class="btn btn-sub" href="HK/fix/index.html">查看 HK 修正版</a>
           </div>
         </article>
-      </section>
-
-      <section class="guide" aria-label="update guide">
-        <h3>後續新增旅程方式</h3>
-        <ol>
-          <li>在根目錄建立新旅程資料夾，例如 <code>Japan</code> 或 <code>Thailand</code>。</li>
-          <li>將該旅程頁面與素材放入資料夾，入口頁建議統一命名為 <code>index.html</code>。</li>
-          <li>回到此主頁複製一張卡片，更新名稱、日期與連結，即可對外展示新旅程。</li>
-        </ol>
       </section>
     </section>
   </main>
